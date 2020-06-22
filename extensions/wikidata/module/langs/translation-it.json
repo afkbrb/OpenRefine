@@ -55,7 +55,6 @@
     "wikidata-account/username-placeholder": "Inserisci il tuo nome utente",
     "wikidata-account/password-label": "Password:",
     "wikidata-account/password-placeholder": "Inserisci la tua password",
-    "wikidata-account/remember-credentials-label": "Ricorda questi dati (verranno mantenuti in forma criptata nelle preferenze di OpenRefine",
     "wikidata-account/close": "Chiudi",
     "wikidata-account/log-in": "Entra",
     "wikidata-account/logged-in-as": "Sei registrato come:",

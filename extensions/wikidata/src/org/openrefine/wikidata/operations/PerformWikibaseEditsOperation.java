@@ -33,8 +33,8 @@ import java.util.Random;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.apache.commons.lang.Validate;
-import org.openrefine.wikidata.editing.ConnectionManager;
 import org.openrefine.wikidata.editing.EditBatchProcessor;
 import org.openrefine.wikidata.editing.NewItemLibrary;
 import org.openrefine.wikidata.schema.WikibaseSchema;
@@ -67,6 +67,9 @@ public class PerformWikibaseEditsOperation extends EngineDependentOperation {
     @JsonProperty("summary")
     private String summary;
 
+    @JsonIgnore
+    private ApiConnection connection;
+
     @JsonCreator
     public PerformWikibaseEditsOperation(
     		@JsonProperty("engineConfig")
@@ -77,6 +80,10 @@ public class PerformWikibaseEditsOperation extends EngineDependentOperation {
         Validate.notNull(summary, "An edit summary must be provided.");
         Validate.notEmpty(summary, "An edit summary must be provided.");
         this.summary = summary;
+    }
+
+    public void setConnection(ApiConnection connection) {
+        this.connection = connection;
     }
 
     @Override
@@ -170,11 +177,9 @@ public class PerformWikibaseEditsOperation extends EngineDependentOperation {
         public void run() {
 
             WebResourceFetcherImpl.setUserAgent("OpenRefine Wikidata extension");
-            ConnectionManager manager = ConnectionManager.getInstance();
-            if (!manager.isLoggedIn()) {
+            if (!connection.isLoggedIn()) {
                 return;
             }
-            ApiConnection connection = manager.getConnection();
 
             WikibaseDataFetcher wbdf = new WikibaseDataFetcher(connection, _schema.getBaseIri());
             WikibaseDataEditor wbde = new WikibaseDataEditor(connection, _schema.getBaseIri());

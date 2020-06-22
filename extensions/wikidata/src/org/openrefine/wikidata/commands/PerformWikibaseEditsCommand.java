@@ -31,6 +31,7 @@ import com.google.refine.browsing.EngineConfig;
 import com.google.refine.commands.EngineDependentCommand;
 import com.google.refine.model.AbstractOperation;
 import com.google.refine.model.Project;
+import org.wikidata.wdtk.wikibaseapi.ApiConnection;
 
 public class PerformWikibaseEditsCommand extends EngineDependentCommand {
 
@@ -38,7 +39,10 @@ public class PerformWikibaseEditsCommand extends EngineDependentCommand {
     protected AbstractOperation createOperation(Project project, HttpServletRequest request, EngineConfig engineConfig)
             throws Exception {
         String summary = request.getParameter("summary");
-        return new PerformWikibaseEditsOperation(engineConfig, summary);
+        ApiConnection connection = (ApiConnection) request.getSession().getAttribute(ConnectionManager.CONNECTION_KEY);
+        PerformWikibaseEditsOperation operation = new PerformWikibaseEditsOperation(engineConfig, summary);
+        operation.setConnection(connection);
+        return operation;
     }
 
 }

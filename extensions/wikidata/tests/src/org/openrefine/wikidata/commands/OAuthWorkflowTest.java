@@ -11,7 +11,6 @@ import com.google.refine.ProjectManager;
 import com.google.refine.preference.PreferenceStore;
 import com.google.refine.util.TestUtils;
 import org.mockito.BDDMockito;
-import org.openrefine.wikidata.editing.ConnectionManager;
 import org.openrefine.wikidata.testing.WikidataRefineTest;
 import org.powermock.api.mockito.PowerMockito;
 import org.powermock.core.classloader.annotations.PrepareForTest;
@@ -36,6 +35,7 @@ import static org.testng.Assert.assertTrue;
 @PrepareForTest(ConnectionManager.class)
 public class OAuthWorkflowTest extends WikidataRefineTest {
 
+    /*
     // used for mocking singleton
     Constructor<ConnectionManager> constructor;
 
@@ -136,6 +136,6 @@ public class OAuthWorkflowTest extends WikidataRefineTest {
         // the credentials in the preference should be cleared
         array = (ArrayNode) prefStore.get(ConnectionManager.PREFERENCE_STORE_KEY);
         assertEquals(0, array.size());
-
     }
+    */
 }

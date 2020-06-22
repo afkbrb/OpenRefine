@@ -24,7 +24,7 @@
 
 package org.openrefine.wikidata.commands;
 
-import static org.openrefine.wikidata.commands.CommandUtilities.respondError;
+import static org.openrefine.wikidata.commands.CommandUtils.respondError;
 
 import java.io.IOException;
 import java.util.List;

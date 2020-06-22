@@ -45,6 +45,8 @@ import com.google.refine.operations.OperationResolver;
 import com.google.refine.process.Process;
 import com.google.refine.process.QuickHistoryEntryProcess;
 
+import javax.servlet.http.HttpServletRequest;
+
 /*
  *  An abstract operation can be applied to different but similar
  *  projects.

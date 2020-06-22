@@ -99,7 +99,7 @@
     "wikidata-account/logged-in-as": "You are logged in as:",
     "wikidata-account/log-in": "Log in",
     "wikidata-account/close": "Close",
-    "wikidata-account/remember-credentials-label": "Remember credentials (stored unencrypted in OpenRefine's preferences)",
+    "wikidata-account/remember-credentials-label": "Remember credentials (stored unencrypted in cookie)",
     "wikidata-account/password-placeholder": "Enter your password",
     "wikidata-account/password-label": "Password:",
     "wikidata-account/username-placeholder": "Enter your username",

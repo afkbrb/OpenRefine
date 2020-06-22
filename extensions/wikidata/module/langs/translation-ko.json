@@ -57,7 +57,6 @@
     "wikidata-account/username-placeholder": "사용자이름을 입력하세요",
     "wikidata-account/password-label": "비밀번호:",
     "wikidata-account/password-placeholder": "비밀번호를 입력하세요",
-    "wikidata-account/remember-credentials-label": "credentials을 기억하세요 (OpenRefine의 Preferences에 암호화되지 않고 저장됩니다)",
     "wikidata-account/close": "닫기",
     "wikidata-account/log-in": "로그인",
     "wikidata-account/logged-in-as": "다음으로 로그인 됨:",

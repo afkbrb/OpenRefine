@@ -1,0 +1,45 @@
+<div class="dialog-frame" style="width: 800px;">
+  <div class="dialog-header" bind="dialogHeader"></div>
+  <div class="dialog-body" bind="dialogBody">
+    <a href="https://www.wikidata.org/" target="_blank">
+      <img src="extension/wikidata/images/wikidata.png" class="wikidata-logo" alt="Wikidata logo"/>
+    </a>
+    <div class="right-of-logo">
+      <p class="body-text" bind="explainLogIn"></p>
+      <p class="body-text"><span style="display: inline" bind="youCanAlso"></span>&nbsp;<a href="javascript:void(0)" bind="passwordLogin"></a></p>
+      <div class="wikibase-user-management-area">
+        <div class="wikibase-user-login" bind="loginArea">
+          <div bind="invalidCredentials" class="wikibase-invalid-credentials"></div>
+          <form bind="loginForm" class="wikibase-login-form" method="post">
+            <table>
+              <tr>
+                <td><label for="wb-client-id" bind="clientIdLabel"></label></td>
+                <td><input name="wb-client-id" id="wb-client-id" type="text" bind="clientIdInput"/></td>
+              </tr>
+              <tr>
+                <td><label for="wb-client-secret" bind="clientSecretLabel"></label></td>
+                <td><input name="wb-client-secret" id="wb-client-secret" type="password" bind="clientSecretInput"/></td>
+              </tr>
+              <tr>
+                <td><label for="wb-access-token" bind="accessTokenLabel"></label></td>
+                <td><input name="wb-access-token" id="wb-access-token" type="text" bind="accessTokenInput"/></td>
+              </tr>
+              <tr>
+                <td><label for="wb-access-secret" bind="accessSecretLabel"></label></td>
+                <td><input name="wb-access-secret" id="wb-access-secret" type="password" bind="accessSecretInput"/></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" name="remember-credentials" id="remember-credentials" bind="rememberCredentials"/></td>
+                <td><label for="remember-credentials"bind="rememberCredentialsLabel"></label></td>
+              </tr>
+            </table>
+            <div class="wikibase-login-buttons">
+              <button class="button cancel-button" type="button" bind="cancelButton"></button>
+              <input class="button button-primary" type="submit" bind="loginButton"/>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

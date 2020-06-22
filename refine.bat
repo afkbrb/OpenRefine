@@ -183,15 +183,17 @@ if not "%REFINE_LIB_DIR%" == "" goto gotLibDir
 set REFINE_LIB_DIR=server\target\lib
 :gotLibDir
 
-if "%GDATA_CLIENT_ID%" == "" goto skipGDataCredentials
-if "%GDATA_CLIENT_SECRET%" == "" goto skipGDataCredentials
-set OPTS=%OPTS% -Dext.gdata.clientid=%GDATA_CLIENT_ID% -Dext.gdata.clientsecret=%GDATA_CLIENT_SECRET%
-:skipGDataCredentials
+if not "%GDATA_CLIENT_ID%" == "" (
+    if not "%GDATA_CLIENT_SECRET%" == "" (
+        set OPTS=%OPTS% -Dext.gdata.clientid=%GDATA_CLIENT_ID% -Dext.gdata.clientsecret=%GDATA_CLIENT_SECRET%
+    )
+)
 
-if "%WIKIDATA_CLIENT_ID%" == "" goto skipWikidataCredentials
-if "%WIKIDATA_CLIENT_SECRET%" == "" goto skipWikidataCredentials
-set OPTS=%OPTS% -Dext.wikidata.clientid=%WIKIDATA_CLIENT_ID% -Dext.wikidata.clientsecret=%WIKIDATA_CLIENT_SECRET%
-:skipWikidataCredentials
+if not "%WIKIDATA_CLIENT_ID%" == "" (
+    if not "%WIKIDATA_CLIENT_SECRET%" == "" (
+        set OPTS=%OPTS% -Dext.wikidata.clientid=%WIKIDATA_CLIENT_ID% -Dext.wikidata.clientsecret=%WIKIDATA_CLIENT_SECRET%
+    )
+)
 
 rem ----- Respond to the action ----------------------------------------------------------
 
